@@ -1,0 +1,11 @@
+/*C3*/SET SCHEMA PUBLIC
+create table if not exists\u000a\u0009db_log(id varchar(50), type varchar(50), host varchar(50), duration bigint, alert boolean)
+DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+INSERT INTO DB_LOG VALUES('scsmbstgra','APPLICATION_LOG','12345',5,TRUE)
+COMMIT
+INSERT INTO DB_LOG VALUES('scsmbstgrb','null','null',3,FALSE)
+COMMIT
+INSERT INTO DB_LOG VALUES('scsmbstgrc','null','null',8,TRUE)
+COMMIT
+DISCONNECT
